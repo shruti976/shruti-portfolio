@@ -1,7 +1,8 @@
 
 title: "Shruti Singh – PhD Portfolio"
 description: "PhD Portfolio | Safe RL, ML, CV, Human-AI"
-theme: minima
+# theme: minima
+remote_theme: hacker
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
