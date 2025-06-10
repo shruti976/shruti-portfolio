@@ -1,0 +1,11 @@
+
+title: "Shruti Singh – PhD Portfolio"
+description: "PhD Portfolio | Safe RL, ML, CV, Human-AI"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+kramdown:
+  input: GFM
