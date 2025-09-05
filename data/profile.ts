@@ -18,7 +18,7 @@ export type Publication = {
   url: string;
   featured?: boolean;
   tags?: string[];
-  image?: string; 
+  image?: string;
 };
 
 export type Profile = {
@@ -26,7 +26,7 @@ export type Profile = {
   tagline: string;
   location: string;
   email: string;
-  links: { linkedin: string; github: string };
+  links: { linkedin: string; github: string }; // ← no 'email' here
   experience: Experience[];
   projects: Project[];
   skills: string[];
@@ -100,7 +100,6 @@ export const profile: Profile = {
     },
   ],
 
-  // ✅ skills inside the profile object
   skills: [
     "Python",
     "R",
@@ -117,7 +116,6 @@ export const profile: Profile = {
   ],
 };
 
-/* ---- Publications exported separately ---- */
 export const publications: Publication[] = [
   {
     title: "Imposter Injection: Learning to Select Features in Reinforcement Learning",

@@ -14,23 +14,50 @@ export default function Hero() {
         {/* LEFT */}
         <div className="md:col-span-2">
           <h1 className="h1">{profile.name}</h1>
-          <p className="mt-3 text-xl text-gray-300">{profile.tagline}</p>
-          <p className="mt-5 text-gray-300/80 max-w-2xl">
-            PhD candidate in Computer Science at the University of Dayton focusing on
-            adversarial robustness in reinforcement learning, deep learning for temporal
-            data, and end-to-end ML systems.
+          <p className="mt-2 text-xl text-gray-300">{profile.tagline}</p>
+
+          {/* Email - tighter margin (clickable) */}
+          <a
+            className="mt-1 inline-block text-gray-400 hover:text-gray-200 underline decoration-gray-600/60 decoration-dotted"
+            href={`mailto:${profile.email}`}
+          >
+            {profile.email}
+          </a>
+
+          <p className="mt-4 text-white-300/80 max-w-2xl">
+            PhD candidate in Computer Science at the University of Dayton
+            focusing on adversarial robustness in reinforcement learning,
+            deep learning for temporal data, and end-to-end ML systems.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <a className="badge" href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="badge" href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
-            <a className="badge" href={`mailto:${profile.email}`}>Email</a>
+            <a
+              className="badge"
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="badge"
+              href={profile.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a className="badge" href={`mailto:${profile.email}`}>
+              Email
+            </a>
             <span className="badge">{profile.location}</span>
           </div>
 
           {/* FANCY selected publications (cards + hover zoom) */}
           <div className="mt-8">
-            <h3 className="text-lg font-semibold text-white mb-3">Selected publications</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Selected publications
+            </h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {sorted.map((p, i) => (
                 <PubCard key={i} pub={p} />
