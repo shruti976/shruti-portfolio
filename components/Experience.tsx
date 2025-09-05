@@ -8,12 +8,12 @@ export default function Experience() {
         {profile.experience.map((exp, idx) => (
           <article key={idx} className="card p-6">
             <div className="flex items-center justify-between gap-2 flex-wrap">
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-xl font-semibold text-white">
                 {exp.role} — {exp.company}
               </h3>
-              <span className="text-sm text-gray-500">{exp.period}</span>
+              <span className="text-sm text-gray-400">{exp.period}</span>
             </div>
-            <ul className="mt-3 space-y-2 text-gray-700 list-disc list-inside">
+            <ul className="mt-3 space-y-2 text-gray-300 list-disc list-inside">
               {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
             </ul>
           </article>

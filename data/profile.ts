@@ -11,7 +11,28 @@ export type Project = {
   bullets: string[];
 };
 
-export const profile = {
+export type Publication = {
+  title: string;
+  venue?: string;
+  year?: string;
+  url: string;
+  featured?: boolean;
+  tags?: string[];
+  image?: string; 
+};
+
+export type Profile = {
+  name: string;
+  tagline: string;
+  location: string;
+  email: string;
+  links: { linkedin: string; github: string };
+  experience: Experience[];
+  projects: Project[];
+  skills: string[];
+};
+
+export const profile: Profile = {
   name: "Shruti Singh",
   tagline: "PhD Candidate • Machine Learning & RL",
   location: "Dayton, Ohio",
@@ -20,6 +41,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/shruti-singh97/",
     github: "https://github.com/shruti976",
   },
+
   experience: [
     {
       role: "Graduate Research Assistant",
@@ -41,7 +63,8 @@ export const profile = {
         "Queried & validated 100+ test cases in SQL, achieving parity with legacy accuracy.",
       ],
     },
-  ] as Experience[],
+  ],
+
   projects: [
     {
       name: "Adversarial Resilience in RL Systems",
@@ -75,10 +98,67 @@ export const profile = {
         "Value iteration, policy iteration, and Q-learning (ε-greedy) with trajectory visualizations.",
       ],
     },
-  ] as Project[],
-  skills: [
-    "Python", "R", "SQL", "NoSQL",
-    "TensorFlow", "PyTorch", "scikit-learn", "Keras",
-    "Pandas", "NumPy", "Matplotlib", "OpenCV",
   ],
-} as const;
+
+  // ✅ skills inside the profile object
+  skills: [
+    "Python",
+    "R",
+    "SQL",
+    "NoSQL",
+    "TensorFlow",
+    "PyTorch",
+    "scikit-learn",
+    "Keras",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "OpenCV",
+  ],
+};
+
+/* ---- Publications exported separately ---- */
+export const publications: Publication[] = [
+  {
+    title: "Imposter Injection: Learning to Select Features in Reinforcement Learning",
+    venue: "Preprint / ResearchGate",
+    year: "2025",
+    url: "https://www.researchgate.net/publication/393623438_Imposter_Injection_Learning_to_Select_Features_in_Reinforcement_Learning",
+    featured: true,
+    tags: ["Reinforcement Learning", "Feature Selection", "Robustness"],
+    image: "/imposter.jpg",
+  },
+  {
+    title: "Multi-Output Career Prediction: Dataset, Method, and Benchmark Suite",
+    venue: "IEEE",
+    year: "2023",
+    url: "https://ieeexplore.ieee.org/abstract/document/10089642",
+    tags: ["Benchmark", "Multi-output", "Prediction"],
+    image: "/multioutput.png",
+  },
+  {
+    title:
+      "Predicting an Optimal Medication/Prescription Regimen for Patient Discordant Chronic Comorbidities Using Multi-Output Models",
+    venue: "MDPI — Information",
+    year: "2024",
+    url: "https://www.mdpi.com/2078-2489/15/1/31",
+    tags: ["Healthcare AI", "Comorbidity", "Multi-output"],
+    image: "/patient.png",
+  },
+  {
+    title: "Mouse Brain Cell Segmentation in Fluorescence Microscopy Images",
+    venue: "IEEE",
+    year: "2025",
+    url: "https://ieeexplore.ieee.org/abstract/document/10944731",
+    tags: ["Computer Vision", "Segmentation", "Microscopy"],
+    image: "/mousebrain.png",
+  },
+  {
+    title: "Virtual Yoga Instructor with Real-Time Feedback",
+    venue: "IEEE",
+    year: "2025",
+    url: "https://ieeexplore.ieee.org/abstract/document/10944737",
+    tags: ["Pose Estimation", "Human-Computer Interaction"],
+    image: "/virtual_yoga.png",
+  },
+];
